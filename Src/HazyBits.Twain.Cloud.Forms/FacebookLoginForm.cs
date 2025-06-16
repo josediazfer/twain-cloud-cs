@@ -10,7 +10,7 @@ namespace HazyBits.Twain.Cloud.Forms
     /// Simple form that simplifies Facebook Authentication process.
     /// </summary>
     /// <seealso cref="System.Windows.Forms.Form" />
-    public partial class FacebookLoginForm : Form
+    public partial class FacebookLoginForm : FormLogin
     {
         private const string AuthorizationTokenName = "authorization_token";
         private WebBrowser webBrowser;
@@ -27,11 +27,6 @@ namespace HazyBits.Twain.Cloud.Forms
             webBrowser.Navigate(loginUrl);
         }
 
-        /// <summary>
-        /// Occurs when TWAIN Cloud successfully authorized the user and issued access tokens.
-        /// </summary>
-        public event EventHandler<TwainCloudAuthorizedEventArgs> Authorized;
-
         private void webBrowser_Navigated(object sender, WebBrowserNavigatedEventArgs e)
         {
             Debug.WriteLine(e.Url.ToString());
@@ -46,10 +41,6 @@ namespace HazyBits.Twain.Cloud.Forms
                 OnAuthorized(new TwainCloudAuthorizedEventArgs(new TwainCloudTokens(authToken, refreshToken)));
         }
 
-        protected virtual void OnAuthorized(TwainCloudAuthorizedEventArgs e)
-        {
-            Authorized?.Invoke(this, e);
-        }
 
         private void InitializeComponent()
         {

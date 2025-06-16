@@ -16,11 +16,6 @@
             </summary>
             <param name="loginUrl">The login URL.</param>
         </member>
-        <member name="E:HazyBits.Twain.Cloud.Forms.FacebookLoginForm.Authorized">
-            <summary>
-            Occurs when TWAIN Cloud successfully authorized the user and issued access tokens.
-            </summary>
-        </member>
         <member name="F:HazyBits.Twain.Cloud.Forms.FacebookLoginForm.components">
             <summary>
             Required designer variable.
@@ -31,6 +26,11 @@
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="E:HazyBits.Twain.Cloud.Forms.FormLogin.Authorized">
+            <summary>
+            Occurs when TWAIN Cloud successfully authorized the user and issued access tokens.
+            </summary>
         </member>
         <member name="T:HazyBits.Twain.Cloud.Forms.Properties.Resources">
             <summary>
